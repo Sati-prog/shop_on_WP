@@ -6,30 +6,69 @@ add_action( 'after_setup_theme', function() {
 
     add_theme_support( 'woocommerce' );
 
-    add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
-
     add_theme_support( 'title-tag' );
 });
 
-// change content wrapper
+add_action('wp_enqueue_scripts', function() {
 
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+    // header
+    wp_enqueue_style( 
+        'eshop-google-fonts', 
+        'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&display=swap' 
+    );
 
-// add action
+    wp_enqueue_style( 
+        'eshop-bootstrap', 
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' 
+    );
 
-add_action('woocommerce_before_main_content', function() {
+    wp_enqueue_style( 
+        'eshop-font-awesome', 
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' 
+    );
 
-    echo '<div class="content-area test-container2">';
+    wp_enqueue_style( 
+        'eshop-owl-carusel', 
+        get_template_directory_uri() . '/assets/owlcarusel/owl.carousel.min.css' 
+    );
+
+    wp_enqueue_style( 
+        'eshop-owl-carusel-theme', 
+        get_template_directory_uri() . '/assets/owlcarusel/owl.theme.default.min.css' 
+    );
+
+    wp_enqueue_style( 
+        'eshop-main', 
+        get_template_directory_uri() . '/assets/css/main.css' 
+    );
+
+
+    // footer
+    wp_enqueue_script( 'jquery' );
+
+    wp_enqueue_script( 
+        'eshop-bootstrap', 
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', 
+        array(),
+        false,
+        true 
+    );
+
+    wp_enqueue_script( 
+        'eshop-owl-carusel', 
+        get_template_directory_uri() . '/assets/owlcarusel/owl.carousel.min.js',  
+        array(),
+        false,
+        true  
+    );
+
+    wp_enqueue_script( 
+        'eshop-main', 
+        get_template_directory_uri() . '/assets/js/main.js',
+        array(),
+        false,
+        true 
+    );
 });
 
-add_action('woocommerce_after_main_content', function() {
-
-    echo '</div>';
-});
-
-remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
-
-add_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 9);
+require_once get_template_directory() . '/incs/woocommerce-hooks.php';
