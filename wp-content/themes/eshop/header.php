@@ -36,7 +36,7 @@
     >
     <link 
         rel="manifest" 
-        href="assets/img/favicons/site.webmanifest"
+        href="<?php echo get_template_directory_uri() ?>/assets/img/favicons/site.webmanifest"
     >
 
     <!-- Primary Meta Tags -->
@@ -127,7 +127,7 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-6 col-md-4">
-                            <a href="index.html" class="header-logo h1">Legrand</a>
+                            <a href="<?php echo home_url( '/' ) ?>" class="header-logo h1"><?php bloginfo( 'name' ) ?></a>
                         </div>
                         
                         <div class="col-md-4 order-md-2 cart-buttons text-end d-none d-md-block">
@@ -196,7 +196,17 @@
                             </div>
 
                             <div class="offcanvas-body">
-                                <ul class="navbar-nav">
+                                <?php 
+
+                                    wp_nav_menu( array(
+
+                                        'theme_location' => 'header-menu',
+                                        'container' => false,
+                                        'menu_class' => 'navbar-nav',
+                                        'walker' => new Eshop_Header_Menu(),
+                                    ) );
+                                ?>
+                                <!-- <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                                     </li>
@@ -225,7 +235,7 @@
                                             <li>
                                                 <a class="dropdown-item" href="category.html">Sconce</a>
                                             </li> <!-- бра -->
-                                            <li class="nav-item dropend">
+                                           <!-- <li class="nav-item dropend">
                                                 <a 
                                                     class="dropdown-item dropdown-toggle" 
                                                     href="#" data-bs-toggle="dropdown"
@@ -241,18 +251,18 @@
                                                     </li>
                                                 </ul>
                                             </li> <!-- сенсорные выключатели -->
-                                            <li>
+                                          <!-- <li>
                                                 <a class="dropdown-item" href="category.html">Sockets</a>
                                             </li> <!-- розетки -->
-                                            <li>
+                                           <!-- <li>
                                                 <a class="dropdown-item" href="category.html">Spots</a>
                                             </li> <!-- споты -->
-                                            <li>
+                                           <!-- <li>
                                                 <a class="dropdown-item" href="category.html">Magnetic tracks</a>
                                             </li> <!-- магнитные треки -->
-                                        </ul>
+                                       <!-- </ul>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </div>
                     </div>
 
