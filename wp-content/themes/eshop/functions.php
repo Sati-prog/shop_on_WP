@@ -91,3 +91,4 @@ function eshop_dump( $data ) {
 require_once get_template_directory() . '/incs/woocommerce-hooks.php';
 require_once get_template_directory() . '/incs/class-eshop-header-menu.php';
 require_once get_template_directory() . '/incs/customizer.php';
+require_once get_template_directory() . '/incs/cpt.php';

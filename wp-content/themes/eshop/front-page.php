@@ -1,90 +1,58 @@
 <?php get_header() ?>
 
         <main class="main">
-            <div id="carousel" class="carousel slide carousel-fade">
-                <div class="carousel-indicators">
+
+            <?php 
+                global $post;
+                $slider = get_posts( array(
+
+                    'post_type' => 'slider',
+                    'order' => 'ASC', // порядок вывода слайдов от 0 до 4
+                ) );
+            ?>
+
+            <?php if ( $slider ): ?>
+                <div id="carousel" class="carousel slide carousel-fade">
+                    <div class="carousel-indicators">
+                        <?php for ($i = 0; $i < count($slider); $i ++): ?>
+                            <button 
+                                type="button" 
+                                data-bs-target="#carousel" 
+                                data-bs-slide-to="<?php echo $i ?>" 
+                                <?php if ( $i == 0 ): ?>class="active"<?php endif; ?>
+                                aria-current="true" 
+                                aria-label="Slide <?php echo $i + 1 ?>"></button>
+                        <?php endfor; ?>
+                    </div>
+                    <div class="carousel-inner">
+                        <?php $i = 0; foreach($slider as $post): setup_postdata( $post ); ?>
+                            <div class="carousel-item <?php if ($i == 0): ?>active<?php endif; ?>">
+                                <img src="<?php the_post_thumbnail_url( 'full' ) ?>" class="d-block w-100" alt="<?php the_title() ?>">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2><?php the_title() ?></h2>
+                                    <p><?php the_content( '' ) ?></p>
+                                </div>
+                            </div>
+                        <?php $i++; endforeach; ?>
+                    </div>
                     <button 
+                        class="carousel-control-prev" 
                         type="button" 
                         data-bs-target="#carousel" 
-                        data-bs-slide-to="0" 
-                        class="active" 
-                        aria-current="true" 
-                        aria-label="Slide 1"></button>
+                        data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                    </button>
                     <button 
+                        class="carousel-control-next" 
                         type="button" 
                         data-bs-target="#carousel" 
-                        data-bs-slide-to="1" 
-                        aria-label="Slide 2"></button>
-                    <button 
-                        type="button" 
-                        data-bs-target="#carousel" 
-                        data-bs-slide-to="2" 
-                        aria-label="Slide 3"></button>
-                        <button 
-                        type="button" 
-                        data-bs-target="#carousel" 
-                        data-bs-slide-to="3" 
-                        aria-label="Slide 4"></button>
-                    <button 
-                        type="button" 
-                        data-bs-target="#carousel" 
-                        data-bs-slide-to="4" 
-                        aria-label="Slide 5"></button>
+                        data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/slider/1.jpg" class="d-block w-100" alt="sconces">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>Sconces</h2>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/slider/2.jpg" class="d-block w-100" alt="switches">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>Switches</h2>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/slider/3.jpg" class="d-block w-100" alt="sockets">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>Sockets</h2>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/slider/4.jpg" class="d-block w-100" alt="spots">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>Spots</h2>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/slider/5.jpg" class="d-block w-100" alt="magnetic tracks">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>Magnetic tracks</h2>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                    </div>
-                </div>
-                <button 
-                    class="carousel-control-prev" 
-                    type="button" 
-                    data-bs-target="#carousel" 
-                    data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                </button>
-                <button 
-                    class="carousel-control-next" 
-                    type="button" 
-                    data-bs-target="#carousel" 
-                    data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+            <?php endif; ?>
 
             <section class="advantages">
                 <div class="container-fluid">
