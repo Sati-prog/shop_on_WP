@@ -114,261 +114,43 @@
                     <div class="row mb-5">
                         <div class="col-12">
                             <h2 class="section-title">
-                                <span>Featured products</span>
+                                <span><?php _e( 'Featured products', 'eshop' ) ?></span>
                                 <!-- <span>рекомендуемые товары</span> -->
                             </h2>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="product-card">
-                                <div class="product-card-offer">
-                                    <div class="offer-hit">Hit</div>
-                                    <div class="offer-new">New</div>
-                                </div>
-                                <div class="product-thumb">
-                                    <a href="product.html">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/sconce.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <h4>
-                                        <a href="product.html">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                                    </h4>
-                                    <p class="product-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, repellat!</p>
-                                    <div class="product-bottom-details d-flex justify-content-between">
-                                        <div class="product-price">
-                                            <small>27000 tg</small>
-                                            25000 tg
-                                        </div>
-                                        <div class="product-links">
-                                            <a href="#" class="btn btn-outline-secondary add-to-cart">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </div>
+                    <?php echo do_shortcode( '[featured_products limit="8"]' ) ?>
+                    <!-- <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                                <div class="offer-new">New</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="product.html">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/sconce.jpeg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="product.html">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, repellat!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>27000 tg</small>
+                                        25000 tg
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-secondary add-to-cart">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="product-card">
-                                <div class="product-card-offer">
-                                    <div class="offer-hit">Hit</div>
-                                    <div class="offer-new">New</div>
-                                </div>
-                                <div class="product-thumb">
-                                    <a href="product.html">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/switches.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <h4>
-                                        <a href="product.html">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                                    </h4>
-                                    <p class="product-excerpt">Lorem, ipsum</p>
-                                    <div class="product-bottom-details d-flex justify-content-between">
-                                        <div class="product-price">
-                                            <small>4000 tg</small>
-                                            3000 tg
-                                        </div>
-                                        <div class="product-links">
-                                            <a href="#" class="btn btn-outline-secondary add-to-cart">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="product-card">
-                                <div class="product-card-offer">
-                                    <div class="offer-hit">Hit</div>
-                                    <div class="offer-new">New</div>
-                                </div>
-                                <div class="product-thumb">
-                                    <a href="product.html">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/sockets.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <h4>
-                                        <a href="product.html">Product 1 Lorem ipsum</a>
-                                    </h4>
-                                    <p class="product-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, repellat!</p>
-                                    <div class="product-bottom-details d-flex justify-content-between">
-                                        <div class="product-price">
-                                            <small>5000 tg</small>
-                                            3000 tg
-                                        </div>
-                                        <div class="product-links">
-                                            <a href="#" class="btn btn-outline-secondary add-to-cart">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="product-card">
-                                <div class="product-card-offer">
-                                    <div class="offer-hit">Hit</div>
-                                    <div class="offer-new">New</div>
-                                </div>
-                                <div class="product-thumb">
-                                    <a href="product.html">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/spots.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <h4>
-                                        <a href="product.html">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                                    </h4>
-                                    <p class="product-excerpt">Lorem, ipsum dolor sit amet</p>
-                                    <div class="product-bottom-details d-flex justify-content-between">
-                                        <div class="product-price">
-                                            <small>7000 tg</small>
-                                            5000 tg
-                                        </div>
-                                        <div class="product-links">
-                                            <a href="#" class="btn btn-outline-secondary add-to-cart">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="product-card">
-                                <div class="product-card-offer">
-                                    <div class="offer-hit">Hit</div>
-                                    <div class="offer-new">New</div>
-                                </div>
-                                <div class="product-thumb">
-                                    <a href="product.html">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/magnetic-tracks.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <h4>
-                                        <a href="product.html">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                                    </h4>
-                                    <p class="product-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, repellat!</p>
-                                    <div class="product-bottom-details d-flex justify-content-between">
-                                        <div class="product-price">
-                                            <small>10000 tg</small>
-                                            5000 tg
-                                        </div>
-                                        <div class="product-links">
-                                            <a href="#" class="btn btn-outline-secondary add-to-cart">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="product-card">
-                                <div class="product-card-offer">
-                                    <div class="offer-hit">Hit</div>
-                                    <div class="offer-new">New</div>
-                                </div>
-                                <div class="product-thumb">
-                                    <a href="product.html">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/sockets.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <h4>
-                                        <a href="product.html">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                                    </h4>
-                                    <p class="product-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, repellat!</p>
-                                    <div class="product-bottom-details d-flex justify-content-between">
-                                        <div class="product-price">
-                                            <small>10000 tg</small>
-                                            5000 tg
-                                        </div>
-                                        <div class="product-links">
-                                            <a href="#" class="btn btn-outline-secondary add-to-cart">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="product-card">
-                                <div class="product-card-offer">
-                                    <div class="offer-hit">Hit</div>
-                                    <div class="offer-new">New</div>
-                                </div>
-                                <div class="product-thumb">
-                                    <a href="product.html">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/spots.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <h4>
-                                        <a href="product.html">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                                    </h4>
-                                    <p class="product-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, repellat!</p>
-                                    <div class="product-bottom-details d-flex justify-content-between">
-                                        <div class="product-price">
-                                            <small>10000 tg</small>
-                                            5000 tg
-                                        </div>
-                                        <div class="product-links">
-                                            <a href="#" class="btn btn-outline-secondary add-to-cart">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="product-card">
-                                <div class="product-card-offer">
-                                    <div class="offer-hit">Hit</div>
-                                    <div class="offer-new">New</div>
-                                </div>
-                                <div class="product-thumb">
-                                    <a href="product.html">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/sconce.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="product-details">
-                                    <h4>
-                                        <a href="product.html">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                                    </h4>
-                                    <p class="product-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, repellat!</p>
-                                    <div class="product-bottom-details d-flex justify-content-between">
-                                        <div class="product-price">
-                                            <small>10000 tg</small>
-                                            5000 tg
-                                        </div>
-                                        <div class="product-links">
-                                            <a href="#" class="btn btn-outline-secondary add-to-cart">
-                                                <i class="fas fa-shopping-cart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
 
