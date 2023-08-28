@@ -1,6 +1,7 @@
 <?php
 
 // https://woocommerce.com/document/woocommerce-theme-developer-handbook/#section-5
+// https://codex.wordpress.org/Theme_Customization_API
 
 add_action( 'after_setup_theme', function() {
 
@@ -82,5 +83,11 @@ add_action('wp_enqueue_scripts', function() {
     );
 });
 
+function eshop_dump( $data ) {
+
+    echo "<pre>" . print_r( $data, 1 ) . "</pre>";
+}
+
 require_once get_template_directory() . '/incs/woocommerce-hooks.php';
 require_once get_template_directory() . '/incs/class-eshop-header-menu.php';
+require_once get_template_directory() . '/incs/customizer.php';

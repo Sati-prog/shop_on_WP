@@ -62,6 +62,8 @@
 <body <?php body_class(); ?> >
     <?php wp_body_open(); ?>
 
+    <?php $eshop_theme_options = eshop_theme_options(); ?>
+
     <div class="wrapper">
         <header class="header">
             <div class="header-top py-2">
@@ -69,25 +71,52 @@
                     <div class="row">
                         <div class="col-6 col-sm-4">
                             <div class="header-top-phone d-flex align-items-center h-100">
-                                <i class="fa-solid fa-mobile-screen-button"></i>
-                                <a href="tel:+77014450899" class="ms-2">7 701 445 0899</a>
+                                <?php if ( ! empty( $eshop_theme_options['phone'] ) ): ?>
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                    <a 
+                                        href="tel:+<?php echo str_replace( 
+                                            array( ' ', '-', '+' ), 
+                                            array( '', '', '' ), 
+                                            $eshop_theme_options['phone'] 
+                                        ) ?>" 
+                                        class="ms-2"
+                                    >
+                                        <?php echo $eshop_theme_options['phone'] ?>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
 
                         <div class="col-sm-4 d-none d-sm-block">
                             <ul class="social-icons d-flex justify-content-center">
-                                <li>
-                                    <a href="https://wa.me/+77014450899"><i class="fa-brands fa-whatsapp"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://t.me/"><i class="fa-brands fa-telegram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/legrand_v_astane/"><i class="fa-brands fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.tiktok.com/@legrand_v_astane"><i class="fa-brands fa-tiktok"></i></a>
-                                </li>
+                                <?php if ( ! empty( $eshop_theme_options['whatsapp'] ) ): ?>
+                                    <li>
+                                        <a href="<?php echo $eshop_theme_options['whatsapp'] ?>">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if ( ! empty( $eshop_theme_options['telegram'] ) ): ?>
+                                    <li>
+                                        <a href="<?php echo $eshop_theme_options['telegram'] ?>">
+                                            <i class="fa-brands fa-telegram"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if ( ! empty( $eshop_theme_options['instagram'] ) ): ?>
+                                    <li>
+                                        <a href="<?php echo $eshop_theme_options['instagram'] ?>">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if ( ! empty( $eshop_theme_options['tiktok'] ) ): ?>
+                                    <li>
+                                        <a href="<?php echo $eshop_theme_options['tiktok'] ?>">
+                                            <i class="fa-brands fa-tiktok"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                         
@@ -206,63 +235,6 @@
                                         'walker' => new Eshop_Header_Menu(),
                                     ) );
                                 ?>
-                                <!-- <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#about">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contact</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="payment.html">Payment</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="delivery.html">Delivery</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a 
-                                            class="nav-link dropdown-toggle" 
-                                            href="#" role="button" 
-                                            data-bs-toggle="dropdown" 
-                                            aria-expanded="false" 
-                                            data-bs-auto-close="outside">
-                                                Catalog
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li>
-                                                <a class="dropdown-item" href="category.html">Sconce</a>
-                                            </li> <!-- бра -->
-                                           <!-- <li class="nav-item dropend">
-                                                <a 
-                                                    class="dropdown-item dropdown-toggle" 
-                                                    href="#" data-bs-toggle="dropdown"
-                                                    data-bs-auto-close="outside">
-                                                        Switches
-                                                </a>
-                                                <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li>
-                                                        <a class="dropdown-item" href="category.html">Simple switches</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="category.html">Touch switches</a>
-                                                    </li>
-                                                </ul>
-                                            </li> <!-- сенсорные выключатели -->
-                                          <!-- <li>
-                                                <a class="dropdown-item" href="category.html">Sockets</a>
-                                            </li> <!-- розетки -->
-                                           <!-- <li>
-                                                <a class="dropdown-item" href="category.html">Spots</a>
-                                            </li> <!-- споты -->
-                                           <!-- <li>
-                                                <a class="dropdown-item" href="category.html">Magnetic tracks</a>
-                                            </li> <!-- магнитные треки -->
-                                       <!-- </ul>
-                                    </li>
-                                </ul> -->
                             </div>
                     </div>
 
