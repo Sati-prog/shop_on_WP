@@ -8,8 +8,8 @@
                    user-scalable=no, 
                    initial-scale=1.0, 
                    maximum-scale=1.0, 
-                   minimum-scale=1.0
-    ">
+                   minimum-scale=1.0"
+    >
 	<meta http-equiv="X-UA-Compatible" 
           content="ie=edge"
     >
@@ -160,19 +160,17 @@
                         </div>
                         
                         <div class="col-md-4 order-md-2 cart-buttons text-end d-none d-md-block">
-                            <a href="#" class="btn p-1">
-                                <i class="fa-solid fa-heart"></i>
-                                <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">3</span>
-                            </a>
-
                             <button 
                                 class="btn p-1 cart-open" 
                                 type="button"
-                                data-bs-toggle="offcanvas2"
+                                data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasCart" 
                                 aria-controls="offcanvasCart">
                                     <i class="fa-solid fa-cart-shopping"></i>
-                                    <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">5</span>
+                                    <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">
+                                        <?php //echo WC()->cart->get_cart_contents_count(); ?>
+                                        <?php echo count( WC()->cart->get_cart() ); ?>
+                                    </span>
                             </button>
                         </div>
 
@@ -239,19 +237,17 @@
                     </div>
 
                     <div class="d-block d-md-none">
-                        <a href="#" class="btn p-1">
-                            <i class="fa-solid fa-heart"></i>
-                            <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">3</span>
-                        </a>
-
                         <button 
                             class="btn p-1 cart-open"
                             type="button"
-                            data-bs-toggle="offcanvas2"
+                            data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasCart" 
                             aria-controls="offcanvasCart">
                                 <i class="fa-solid fa-cart-shopping"></i>
-                                <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">5</span>
+                                <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">
+                                    <?php //echo WC()->cart->get_cart_contents_count(); ?>
+                                    <?php echo count( WC()->cart->get_cart() ); ?>
+                                </span>
                         </button>
                     </div>
                 </div>
@@ -260,114 +256,14 @@
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasCartLabel">Cart</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <h5 class="offcanvas-title" id="offcanvasCartLabel">Your cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <div class="table-responsive">
-                    <table class="table offcanvasCart-table">
-                        <tbody>
-                            <tr>
-                                <td class="product-img-td">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/sconce.jpeg" alt="">
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At.
-                                    </a>
-                                </td>
-                                <td>5000 tg</td>
-                                <td>&times;1</td>
-                                <td>
-                                    <button class="btn btn-danger">
-                                        <i class="fa-regular fa-circle-xmark"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="product-img-td">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/sockets.jpeg" alt="">
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At.
-                                    </a>
-                                </td>
-                                <td>3000 tg</td>
-                                <td>&times;10</td>
-                                <td>
-                                    <button class="btn btn-danger">
-                                        <i class="fa-regular fa-circle-xmark"></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="product-img-td">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/products/spots.jpg" alt="">
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At.
-                                    </a>
-                                </td>
-                                <td>10000 tg</td>
-                                <td>&times;5</td>
-                                <td>
-                                    <button class="btn btn-danger">
-                                        <i class="fa-regular fa-circle-xmark"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2" class="text-center"><b>Total:</b></td>
-                                <td colspan="3" class="text-center">18000 tg</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-                <div class="text-end mt-3">
-                    <a href="cart.html" class="btn btn-outline-warning">Cart</a>
-                    <a href="checkout.html" class="btn btn-outline-secondary">Checkout</a>
-                </div>
-
-                <div class="dropdown mt-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        Dropdown button
-                    </button>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a 
-                            class="dropdown-item closecart" 
-                            href="#footer" 
-                            data-href="footer">Footer
-                        </a>
-                    </li>
-                    <li>
-                        <a 
-                            class="dropdown-item closecart" 
-                            href="#about" 
-                            data-href="about">About
-                        </a>
-                    </li>
-                    <li>
-                        <a 
-                            class="dropdown-item closecart" 
-                            href="#map" 
-                            data-href="map">Map
-                        </a>
-                    </li>
-                </ul>
-              </div>
+                <?php woocommerce_mini_cart(); ?>
+<!--
+    https://woocommerce.github.io/code-reference/packages/WooCommerce.html
+    https://woocommerce.com/document/show-cart-contents-total/
+-->
             </div>
         </div>
