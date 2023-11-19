@@ -62,7 +62,10 @@
 <body <?php body_class(); ?> >
     <?php wp_body_open(); ?>
 
-    <?php $eshop_theme_options = eshop_theme_options(); ?>
+    <?php 
+        global $eshop_theme_options;
+        $eshop_theme_options = eshop_theme_options(); 
+    ?>
 
     <div class="wrapper">
         <header class="header">
@@ -175,24 +178,7 @@
                         </div>
 
                         <div class="col-6 col-md-4 order-md-1">
-                            <form action="">
-                                <div class="input-group">
-                                    <input 
-                                        type="text" 
-                                        name="Search"
-                                        class="form-control" 
-                                        placeholder="Search..." 
-                                        aria-label="Search..." 
-                                        aria-describedby="button-search
-                                    ">
-                                    <button 
-                                        class="btn btn-outline-warning" 
-                                        type="submit" 
-                                        id="button-search">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
-                                </div>
-                            </form>
+                            <?php aws_get_search_form( true ); ?>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,8 @@
+<?php 
+
+    global $eshop_theme_options;
+
+?>
 
 
         <footer class="footer">
@@ -53,10 +58,34 @@
                                 <b>Phone numbers</b>
                             </li>
                             <li>
-                                <a href="tel:+77014450899">7 701 445 0899</a> - Akyk
+                                <?php if ( ! empty( $eshop_theme_options['phone'] ) ): ?>
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                    <a 
+                                        href="tel:+<?php echo str_replace( 
+                                            array( ' ', '-', '+' ), 
+                                            array( '', '', '' ), 
+                                            $eshop_theme_options['phone'] 
+                                        ) ?>" 
+                                        class="ms-2"
+                                    >
+                                        <?php echo $eshop_theme_options['phone'] ?>
+                                    </a> - Akyk
+                                <?php endif; ?>
                             </li>
                             <li>
-                                <a href="tel:+77014450899">7 775 009 7977</a> - Bakytjan
+                                <?php if ( ! empty( $eshop_theme_options['second-phone'] ) ): ?>
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                    <a 
+                                        href="tel:+<?php echo str_replace( 
+                                            array( ' ', '-', '+' ), 
+                                            array( '', '', '' ), 
+                                            $eshop_theme_options['second-phone'] 
+                                        ) ?>" 
+                                        class="ms-2"
+                                    >
+                                        <?php echo $eshop_theme_options['second-phone'] ?>
+                                    </a> - Bakytjan
+                                <?php endif; ?>
                             </li>
                             <li>
                                 <b>Address</b>
@@ -66,24 +95,46 @@
                                 <br>
                                 TCM Etalon, 1A row, 15th place
                             </li>
+                            <!-- <li>
+                                <?php if ( ! empty( $eshop_theme_options['address'] ) ): ?>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span class="ms-2"><?php echo $eshop_theme_options['address'] ?></span>
+                                <?php endif; ?>
+                            </li> -->
                         </ul>
                     </div>
 
                     <div class="col-md-3 col-6">
                         <h4>Follow us</h4>
                         <ul class="footer-icons">
-                            <li>
-                                <a href="https://wa.me/+77014450899"><i class="fa-brands fa-whatsapp"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://t.me/"><i class="fa-brands fa-telegram"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/legrand_v_astane/"><i class="fa-brands fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.tiktok.com/@legrand_v_astane"><i class="fa-brands fa-tiktok"></i></a>
-                            </li>
+                            <?php if ( ! empty( $eshop_theme_options['whatsapp'] ) ): ?>
+                                <li>
+                                    <a href="<?php echo $eshop_theme_options['whatsapp'] ?>">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ( ! empty( $eshop_theme_options['telegram'] ) ): ?>
+                                <li>
+                                    <a href="<?php echo $eshop_theme_options['telegram'] ?>">
+                                        <i class="fa-brands fa-telegram"></i>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ( ! empty( $eshop_theme_options['instagram'] ) ): ?>
+                                <li>
+                                    <a href="<?php echo $eshop_theme_options['instagram'] ?>">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                            <?php if ( ! empty( $eshop_theme_options['tiktok'] ) ): ?>
+                                <li>
+                                    <a href="<?php echo $eshop_theme_options['tiktok'] ?>">
+                                        <i class="fa-brands fa-tiktok"></i>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

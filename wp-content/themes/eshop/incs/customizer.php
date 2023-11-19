@@ -16,6 +16,21 @@ add_action( 'customize_register', function($wp_customize) {
         'section' => 'eshop_theme_options'
     ) );
 
+    $wp_customize->add_setting( 'eshop_second-phone' );
+    $wp_customize->add_control( 'eshop_second-phone', array( 
+
+        'label' => __( 'Phone in footer', 'eshop' ),
+        'section' => 'eshop_theme_options'
+    ) );
+
+    // Address
+    $wp_customize->add_setting( 'eshop_address' );
+    $wp_customize->add_control( 'eshop_address', array( 
+
+        'label' => __( 'Address in footer', 'eshop' ),
+        'section' => 'eshop_theme_options'
+    ) );
+
     // WhatsApp
     $wp_customize->add_setting( 'eshop_whatsapp' );
     $wp_customize->add_control( 'eshop_whatsapp', array( 
@@ -55,6 +70,8 @@ function eshop_theme_options() {
     return array(
 
         'phone' => get_theme_mod( 'eshop_phone' ),
+        'second-phone' => get_theme_mod( 'eshop_second-phone' ),
+        'address' => get_theme_mod( 'eshop_address' ),
         'whatsapp' => get_theme_mod( 'eshop_whatsapp' ),
         'telegram' => get_theme_mod( 'eshop_telegram' ),
         'instagram' => get_theme_mod( 'eshop_instagram' ),
