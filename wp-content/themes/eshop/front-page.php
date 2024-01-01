@@ -152,7 +152,7 @@
 
                     <div class="row">
                         <div class="col-lg-3 mb-4 team-img">
-                            <img img src="<?php echo get_template_directory_uri() ?>/assets/img/team.jpg" class="img-fluid" alt="">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/team.jpg" class="img-fluid" alt="">
                         </div>
 
                         <div class="col-lg-9">
@@ -176,7 +176,7 @@
                 </div>
             </section>
 
-            <iframe id="map" 
+            <iframe 
                 id="map"
                 src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d625.3521269201859!2d71.39158175952458!3d51.17469326555298!3m2!1i1024!2i768!4f13.1!2m1!1z0LMu0JDRgdGC0LDQvdCwLCDQv9GALtCR0L7Qs9C10L3QsdCw0Y8gNi81INCi0KHQoCDQrdGC0LDQu9C-0L0gMdCQINGA0Y_QtCAxNSDQvNC10YHRgtC-!5e0!3m2!1sru!2skz!4v1687847791787!5m2!1sru!2skz" 
                 width="100%" 

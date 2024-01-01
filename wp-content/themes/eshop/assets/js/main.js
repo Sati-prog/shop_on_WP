@@ -67,4 +67,17 @@ jQuery(document).ready(function($)  {
             }
         }
     });
+
+    // Javascript-события в Woocommerce
+    // https://gist.github.com/bagerathan/2b57e7413bfdd09afa04c7be8c6a617f
+
+    $('body').on('adding_to_cart', function(e, btn, data) {
+
+        btn.closest('.product-card').find('.ajax-loader').fadeIn();
+    });
+
+    $('body').on('added_to_cart', function(e, response_fragments, response_cart_hash, btn) {
+
+        btn.closest('.product-card').find('.ajax-loader').fadeOut();
+    });
 });

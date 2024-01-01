@@ -324,7 +324,7 @@ ul.social-icons a:hover {
 }
 
 .product-thumb img {
-    max-height: 250px;
+    max-height: 300px;
     width: auto;
 }
 
@@ -784,6 +784,48 @@ footer a:hover {
 
 /* ------------------- Search form ----------------------- */
 
+/* ------------------- 404 page ----------------------- */
+
+.page404 {
+    margin: 30px 0;
+}
+
+.page404 .page404-img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 60%;
+}
+
+.page404 .page404-link {
+    text-decoration: none; 
+    text-transform: uppercase;
+}
+
+/* ------------------- 404 page ----------------------- */
+
+/* ------------------- Product card loader ----------------------- */
+
+.product-card .ajax-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .5);
+    z-index: 2;
+    display: none;
+}
+
+.product-card .ajax-loader img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100px, -100px);
+}
+
+/* ------------------- Product card loader ----------------------- */
+
 span.price {
     display: block;
     text-align: center;
@@ -854,6 +896,12 @@ a.added_to_cart {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .page404 .page404-img {
+        width: 80%;
+    }
+}
+
 @media only screen and (max-width: 575px) {
     .header-top-phone a {
         margin-left: 0.3rem!important;
@@ -872,5 +920,9 @@ a.added_to_cart {
         padding-left: 8px;
         padding-right: 8px;
         font-size: .8rem;
+    }
+
+    .page404 .page404-img {
+        width: 90%;
     }
 }
