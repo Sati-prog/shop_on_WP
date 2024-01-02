@@ -1,6 +1,17 @@
+<?php 
+
+    if ( ! is_active_sidebar( 'sidebar-1' )) {
+
+        return;
+    }
+
+?>
+
 <div class="sidebar">
 
-    <button 
+    <?php dynamic_sidebar('sidebar-1'); ?>
+
+    <!-- <button 
         class="btn btn-warning w-100 collapse-filters-btn mb-3" 
         type="button" 
         data-bs-toggle="collapse" 
@@ -242,5 +253,5 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 </div>

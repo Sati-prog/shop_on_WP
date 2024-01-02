@@ -888,6 +888,63 @@ footer a:hover {
 
 /* ------------------- Pagination ----------------------- */
 
+/* ------------------- Filters ----------------------- */
+
+.wpc-filter-header {
+    position: relative;
+    text-transform: uppercase;
+    color: var(--contrast-color);
+    font-weight: 700;
+}
+
+.wpc-filter-header .widget-title {
+    background-color: #fff;
+    padding-right: 1rem;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+.wpc-filter-header::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 30%;
+    left: 0;
+    border-top: 1px dashed var(--text-color);
+}
+
+.wpc-filters-main-wrap li.wpc-term-item label {
+    justify-content: space-between;
+    width: 100%;
+}
+
+section.widget {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+body .wpc-filters-open-button-container 
+a.wpc-open-close-filters-button {
+    width: 100%;
+    background-color: var(--accent-color)!important;
+    text-transform: uppercase;
+}
+
+span.wpc-icon-line-1:after, 
+span.wpc-icon-line-2:after, 
+span.wpc-icon-line-3:after {
+    background-color: var(--accent-color)!important;
+}
+
+.wpc-button-inner, .wpc-chip-content {
+    justify-content: center;
+}
+
+/* ------------------- Filters ----------------------- */
+
 span.price {
     display: block;
     text-align: center;
