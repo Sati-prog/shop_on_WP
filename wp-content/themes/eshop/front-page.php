@@ -55,7 +55,7 @@
             <?php endif; ?>
 
             <section class="advantages">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row mb-5">
                         <div class="col-12">
                             <h2 class="section-title">
@@ -109,8 +109,25 @@
                 </div>
             </section>
 
+            <!-- https://woo.com/document/woocommerce-shortcodes/#product-category -->
+
+            <section class="home-categories">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <h2 class="section-title">
+                                <span><?php _e( 'Categories', 'eshop' ) ?></span>
+                                <!-- <span>категории товаров</span> -->
+                            </h2>
+                        </div>
+                    </div>
+
+                    <?php echo do_shortcode( '[product_categories]' ) ?>
+                </div>
+            </section>
+
             <section class="featured-products">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row mb-5">
                         <div class="col-12">
                             <h2 class="section-title">
@@ -125,7 +142,7 @@
             </section>
 
             <section class="new-products">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row mb-5">
                         <div class="col-12">
                             <h2 class="section-title">
@@ -140,7 +157,7 @@
             </section>
 
             <section class="about-us" id="about">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row mb-5">
                         <div class="col-12">
                             <h2 class="section-title">

@@ -212,6 +212,10 @@ ul.social-icons a:hover {
     background-color: var(--contrast-color) !important;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    background-color: var(--accent-color);
+}
+
 .header-bottom .nav-item:first-child .nav-link {
     padding-left: 0;
 }
@@ -944,6 +948,30 @@ span.wpc-icon-line-3:after {
 }
 
 /* ------------------- Filters ----------------------- */
+
+/* ------------------- Categories ----------------------- */
+
+.home-categories a {
+    text-decoration: none;
+}
+
+.home-categories a:hover {
+    color: var(--contrast-color);
+}
+
+.categories-home span {
+    display: inline-block;
+    background: var(--grey-color);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.categories-home span b {
+    font-size: 15px;
+}
+
+/* ------------------- Categories ----------------------- */
 
 span.price {
     display: block;

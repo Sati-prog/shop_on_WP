@@ -2,11 +2,19 @@
 
 <?php do_action( 'woocommerce_before_main_content' ); ?>
 
-<div class="col-lg-3 col-md-4">
-    <?php do_action( 'woocommerce_sidebar' ); ?>
-</div>
+<?php 
+    $content_class = is_search() ? 'col-12' : 'col-lg-9 col-md-8';
+?>
 
-<div class="col-lg-9 col-md-8">
+<?php if(!is_search()): ?>
+
+    <div class="col-lg-3 col-md-4">
+        <?php do_action( 'woocommerce_sidebar' ); ?>
+    </div>
+
+<?php endif; ?>
+
+<div class="<?php echo $content_class; ?>">
     <div class="col-12">
         <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
             <h1 class="woocommerce-products-header__title page-title section-title h3">
