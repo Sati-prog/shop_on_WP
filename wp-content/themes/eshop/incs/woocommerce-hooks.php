@@ -90,8 +90,8 @@ add_filter( 'woocommerce_breadcrumb_defaults', function() {
 
     return array(
             'delimiter'   => '',
-            'wrap_before' => '<div class="container"><div class="row"><div class="col-12"><nav class="breadcrumbs"><ul>',
-            'wrap_after'  => '</ul></nav></div></div></div>',
+            'wrap_before' => '<div class="col-12"><nav class="breadcrumbs"><ul>',
+            'wrap_after'  => '</ul></nav></div>',
             'before'      => '<li>',
             'after'       => '</li>',
             'home'        => __( 'Home', 'eshop' ),
@@ -128,3 +128,13 @@ add_action('woocommerce_shop_loop_subcategory_title', function($category) {
 
 	echo "<h5 class='mt-2 categories-home'>{$category->name} <span><b>{$category->count}</b></span></h5>";
 }, 10);
+
+// sidebar in product page
+
+// add_action('templete_redirect', function() {
+
+// 	if (is_product()) {
+
+// 		remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+// 	}
+// });

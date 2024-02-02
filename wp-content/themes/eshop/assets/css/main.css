@@ -924,6 +924,11 @@ footer a:hover {
     width: 100%;
 }
 
+.wpc-filters-range-wrapper input[type="number"] {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+}
+
 section.widget {
     padding-top: 0;
     padding-bottom: 0;
